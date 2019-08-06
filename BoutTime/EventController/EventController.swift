@@ -10,6 +10,7 @@ import Foundation
 
 class EventController {
     var events: [Event] = []
+    var timer: Timer?
     
     //init the array
     init(){

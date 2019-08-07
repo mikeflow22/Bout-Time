@@ -9,9 +9,11 @@
 import UIKit
 
 class EventViewController: UIViewController {
+    var eventController = EventController()
     
     var aLabel = ""
     var bLabel = ""
+    var labelArray: [UILabel] = []
     
     @IBOutlet weak var firstLabel: UILabel!
     @IBOutlet weak var secondLabel: UILabel!
@@ -19,17 +21,25 @@ class EventViewController: UIViewController {
     @IBOutlet weak var fourthLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        firstLabel.text = "first label"
-        secondLabel.text = "second label"
-        thirdLabel.text = "Third label"
-        fourthLabel.text = "Fourth Label"
+//        firstLabel.text = "first label"
+//        secondLabel.text = "second label"
+//        thirdLabel.text = "Third label"
+//        fourthLabel.text = "Fourth Label"
+        loadLabels()
     }
     
-    
+    func loadLabels(){
+        labelArray += [ firstLabel, secondLabel, thirdLabel, fourthLabel ]
+            for label in labelArray {
+                guard let event = eventController.events.randomElement() else { print("Error getting random events"); return }
+                label.text = event.question
+                eventController.remove(event: event)
+                print("This is the event: \(event.question)")
+            }
+    }
 
     @IBAction func upDownVoteButtonPresses(_ sender: UIButton) {
         if sender.tag == 1 || sender.tag == 2 {

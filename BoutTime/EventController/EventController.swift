@@ -10,6 +10,7 @@ import Foundation
 
 class EventController {
     var events: [Event] = []
+    private var removedEvents: [Event] = []
     var timer: Timer?
     
     //init the array
@@ -58,6 +59,11 @@ class EventController {
         ]
     }
 
-    
+    func remove(event: Event){
+        guard let index = events.firstIndex(of: event) else { print("Error removing event function"); return }
+        events.remove(at: index)
+        //add the removed event to the removedEvents array
+        removedEvents.append(event)
+    }
 
 }

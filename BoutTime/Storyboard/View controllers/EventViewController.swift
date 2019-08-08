@@ -23,24 +23,32 @@ class EventViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-//        firstLabel.text = "first label"
-//        secondLabel.text = "second label"
-//        thirdLabel.text = "Third label"
-//        fourthLabel.text = "Fourth Label"
         loadLabels()
+    }
+    //Shake Gesture
+    //We need to make the view Controller respond to touch events.
+    override func becomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    //now the actual shake can be detected
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            correctAnswers()
+        }
     }
     
     func loadLabels(){
         labelArray += [ firstLabel, secondLabel, thirdLabel, fourthLabel ]
-            for label in labelArray {
-                guard let event = eventController.events.randomElement() else { print("Error getting random events"); return }
-                label.text = event.question
-                eventController.remove(event: event)
-                print("This is the event: \(event.question)")
-            }
+        for label in labelArray {
+            guard let event = eventController.events.randomElement() else { print("Error getting random events"); return }
+            label.text = event.question
+            eventController.currentArray.append(event)
+            eventController.remove(event: event)
+            print("This is the event: \(event.question)")
+        }
     }
-
+    
     @IBAction func upDownVoteButtonPresses(_ sender: UIButton) {
         if sender.tag == 1 || sender.tag == 2 {
             view.backgroundColor = .blue
@@ -59,31 +67,54 @@ class EventViewController: UIViewController {
     }
     
     func changeFirstAndSecondLabels(){
-        if firstLabel.text != nil { //change this condition to check the year
-            bLabel = firstLabel.text!
-            aLabel = secondLabel.text!
-            firstLabel.text = aLabel
-            secondLabel.text = bLabel
-        }
+        //change this condition to check the year
+        bLabel = firstLabel.text!
+        aLabel = secondLabel.text!
+        firstLabel.text = aLabel
+        secondLabel.text = bLabel
+        
     }
     
     func changeSecondAndThridLabels(){
-        if firstLabel.text != nil { //change this condition to check the year
-            bLabel = secondLabel.text!
-            aLabel = thirdLabel.text!
-            secondLabel.text = aLabel
-            thirdLabel.text = bLabel
-        }
+        //change this condition to check the year
+        bLabel = secondLabel.text!
+        aLabel = thirdLabel.text!
+        secondLabel.text = aLabel
+        thirdLabel.text = bLabel
+        
     }
     
     func changeThirdAndFourthLabels(){
-    if firstLabel.text != nil { //change this condition to check the year
-    bLabel = thirdLabel.text!
-    aLabel = fourthLabel.text!
-    thirdLabel.text = aLabel
-    fourthLabel.text = bLabel
-    }
+        //change this condition to check the year
+        bLabel = thirdLabel.text!
+        aLabel = fourthLabel.text!
+        thirdLabel.text = aLabel
+        fourthLabel.text = bLabel
+        
     }
     
+    
+    func correctAnswers(){
+//        var labelEvent1: Event?
+//        var labelEvent2: Event?
+//        var labelEvent3: Event?
+//        var labelEvent4: Event?
+        var holderYear = 0
+        var anotherArray: [Event] = []
+        let firstArray = eventController.currentArray.sorted()
+        print("FirstArray array: \(firstArray)")
+        //filter by event year smallest to largest
+        for event in eventController.currentArray {
+            if event.year > holderYear {
+                holderYear = event.year
+                anotherArray.insert(event, at: 0)
+                print("The year of the event: \(event.year)")
+            } else {
+                anotherArray.append(event)
+            }
+        }
+        let answer = anotherArray.sorted(by: < )
+        print("The anotherArray array: \(answer)")
+        
+    }
 }
-

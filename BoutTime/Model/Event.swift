@@ -10,6 +10,7 @@ import Foundation
 
 struct Event: Equatable, Comparable {
     static func < (lhs: Event, rhs: Event) -> Bool {
+        //tell it what to compare
         return lhs.year < rhs.year
     }
     

@@ -9,6 +9,8 @@
 import Foundation
 
 class EventController {
+    var round = 6
+    var points = 0
     var events: [Event] = []
     var removedEvents: [Event] = []
     var currentArray: [Event] = []
@@ -56,7 +58,7 @@ class EventController {
                       Event(question: "Question 33", year: 33),
                       Event(question: "Question 34", year: 34),
                       Event(question: "Question 35", year: 35),
-                      Event(question: "Question 36", year: 36),
+                      Event(question: "Question 36", year: 36)
         ]
     }
 
@@ -67,6 +69,10 @@ class EventController {
         removedEvents.append(event)
     }
     
+    //If they get it right or wrong
+    //Move to next round
+    //Add Points
+    //Restart timer
     
 
 }

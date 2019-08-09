@@ -95,26 +95,15 @@ class EventViewController: UIViewController {
     
     
     func correctAnswers(){
-//        var labelEvent1: Event?
-//        var labelEvent2: Event?
-//        var labelEvent3: Event?
-//        var labelEvent4: Event?
-        var holderYear = 0
-        var anotherArray: [Event] = []
-        let firstArray = eventController.currentArray.sorted()
-        print("FirstArray array: \(firstArray)")
-        //filter by event year smallest to largest
-        for event in eventController.currentArray {
-            if event.year > holderYear {
-                holderYear = event.year
-                anotherArray.insert(event, at: 0)
-                print("The year of the event: \(event.year)")
-            } else {
-                anotherArray.append(event)
-            }
+        let answerArray = eventController.currentArray.sorted()
+        let labelTextArray = labelArray.compactMap { $0.text }
+        if labelTextArray == answerArray.map { $0.question } {
+            //add points
+            print("I think it worked. ")
+            print("String array: \(labelTextArray)")
+            print("firstArray array: \(answerArray)")
+        } else {
+            print("Error COMPARABLE DID NOT WORK")
         }
-        let answer = anotherArray.sorted(by: < )
-        print("The anotherArray array: \(answer)")
-        
     }
 }

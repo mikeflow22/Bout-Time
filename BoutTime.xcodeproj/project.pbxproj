@@ -12,6 +12,7 @@
 		1B9A7D3622E5257D000298CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B9A7D3422E5257D000298CE /* Main.storyboard */; };
 		1B9A7D3822E5257E000298CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B9A7D3722E5257E000298CE /* Assets.xcassets */; };
 		1B9A7D3B22E5257E000298CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B9A7D3922E5257E000298CE /* LaunchScreen.storyboard */; };
+		1BC435032301CEFE00EE6358 /* FinalScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC435022301CEFE00EE6358 /* FinalScoreViewController.swift */; };
 		1BC8702722F8EF200080CDC4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC8702622F8EF200080CDC4 /* Event.swift */; };
 		1BC8702D22F8F0BA0080CDC4 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC8702C22F8F0BA0080CDC4 /* EventController.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +25,7 @@
 		1B9A7D3722E5257E000298CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B9A7D3A22E5257E000298CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B9A7D3C22E5257E000298CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BC435022301CEFE00EE6358 /* FinalScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalScoreViewController.swift; sourceTree = "<group>"; };
 		1BC8702622F8EF200080CDC4 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		1BC8702C22F8F0BA0080CDC4 /* EventController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +90,7 @@
 		1BC8702922F8F07F0080CDC4 /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
+				1BC435022301CEFE00EE6358 /* FinalScoreViewController.swift */,
 				1B9A7D3222E5257D000298CE /* EventViewController.swift */,
 			);
 			path = "View controllers";
@@ -183,6 +186,7 @@
 			files = (
 				1B9A7D3322E5257D000298CE /* EventViewController.swift in Sources */,
 				1BC8702722F8EF200080CDC4 /* Event.swift in Sources */,
+				1BC435032301CEFE00EE6358 /* FinalScoreViewController.swift in Sources */,
 				1BC8702D22F8F0BA0080CDC4 /* EventController.swift in Sources */,
 				1B9A7D3122E5257D000298CE /* AppDelegate.swift in Sources */,
 			);

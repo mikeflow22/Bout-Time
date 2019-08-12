@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -211,6 +212,57 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="138.75" y="133.09859154929578"/>
+        </scene>
+        <!--Final Score View Controller-->
+        <scene sceneID="gUC-An-dPP">
+            <objects>
+                <viewController id="yOe-LM-etw" customClass="FinalScoreViewController" customModule="BoutTime" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eEG-lh-jyJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Z7X-Vl-8Bq">
+                                <rect key="frame" x="124.5" y="238.5" width="71" height="91"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjB-YI-Vmy">
+                                        <rect key="frame" x="10" y="0.0" width="51.5" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="4/6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVa-Zh-SOD">
+                                        <rect key="frame" x="13.5" y="20" width="44" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4k-Gc-ufr">
+                                        <rect key="frame" x="0.0" y="61" width="71" height="30"/>
+                                        <state key="normal" title="Play Again"/>
+                                        <connections>
+                                            <action selector="playAgainButtonPressed:" destination="yOe-LM-etw" eventType="touchUpInside" id="W0e-DO-tOp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Z7X-Vl-8Bq" firstAttribute="leading" secondItem="zJe-Ki-NZD" secondAttribute="leading" constant="124.5" id="4db-88-bGD"/>
+                            <constraint firstItem="Z7X-Vl-8Bq" firstAttribute="top" secondItem="zJe-Ki-NZD" secondAttribute="top" constant="218.5" id="NYT-BB-FLp"/>
+                            <constraint firstItem="Z7X-Vl-8Bq" firstAttribute="centerY" secondItem="eEG-lh-jyJ" secondAttribute="centerY" id="jEI-y0-zX3"/>
+                            <constraint firstItem="Z7X-Vl-8Bq" firstAttribute="centerX" secondItem="eEG-lh-jyJ" secondAttribute="centerX" id="pzl-Os-UCj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zJe-Ki-NZD"/>
+                    </view>
+                    <connections>
+                        <outlet property="playAgainProperties" destination="o4k-Gc-ufr" id="G2c-vC-dyb"/>
+                        <outlet property="scoreLabel" destination="YVa-Zh-SOD" id="TMD-qU-DUu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gc6-of-fhB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="890.625" y="130.98591549295776"/>
         </scene>
     </scenes>
     <resources>

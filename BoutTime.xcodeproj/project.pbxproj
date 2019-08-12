@@ -90,8 +90,8 @@
 		1BC8702922F8F07F0080CDC4 /* View controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1BC435022301CEFE00EE6358 /* FinalScoreViewController.swift */,
 				1B9A7D3222E5257D000298CE /* EventViewController.swift */,
+				1BC435022301CEFE00EE6358 /* FinalScoreViewController.swift */,
 			);
 			path = "View controllers";
 			sourceTree = "<group>";

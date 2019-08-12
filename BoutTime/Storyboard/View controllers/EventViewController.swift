@@ -53,7 +53,7 @@ class EventViewController: UIViewController {
     }
     
     func loadLabels(){
-        if eventController.round < 6 {
+        if eventController.round < 2 {
             //TODO: START TIMER
             createTimer()
             
@@ -77,8 +77,6 @@ class EventViewController: UIViewController {
             destination.eventController = eventController
         }
     }
-    
-    
     
     @IBAction func upDownVoteButtonPresses(_ sender: UIButton) {
         if sender.tag == 1 || sender.tag == 2 {

@@ -11,7 +11,8 @@ import UIKit
 class FinalScoreViewController: UIViewController {
     var eventController: EventController? {
         didSet {
-            
+            print("B")
+            updateViews()
         }
     }
     
@@ -20,13 +21,20 @@ class FinalScoreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print("A")
+        updateViews()
         // Do any additional setup after loading the view.
-        playAgainProperties.layer.cornerRadius = 4
+        playAgainProperties.backgroundColor = .gray
+        playAgainProperties.layer.cornerRadius = 12
     }
     
     @IBAction func playAgainButtonPressed(_ sender: UIButton) {
         navigationController?.popToRootViewController(animated: true)
     }
     
+    func updateViews(){
+        guard let eventController = eventController, isViewLoaded else  { print("blah blah blah"); return }
+        print("eventController is set")
+        scoreLabel.text = "\(eventController.points)/6"
+    }
 }

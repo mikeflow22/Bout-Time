@@ -15,7 +15,15 @@ class EventViewController: UIViewController {
     var bLabel = ""
     var labelArray: [UILabel] = []
     var timer: Timer?
-    var countDown = 6
+    var countDown: TimeInterval = 6
+    
+    var timeFormatter: DateComponentsFormatter {
+       let formatter = DateComponentsFormatter()
+        formatter.unitsStyle = .positional
+        formatter.zeroFormattingBehavior = .pad
+        formatter.allowedUnits = [.minute, .second]
+        return formatter
+    }
     
     @IBOutlet weak var firstLabel: UILabel!
     @IBOutlet weak var secondLabel: UILabel!
@@ -27,7 +35,7 @@ class EventViewController: UIViewController {
         super.viewDidLoad()
         labelArray += [ firstLabel, secondLabel, thirdLabel, fourthLabel ]
         loadLabels()
-        timerLabel.text = "\(countDown)"
+        timerLabel.text = timeFormatter.string(from: countDown)
     }
     
     //Shake Gesture
@@ -39,7 +47,6 @@ class EventViewController: UIViewController {
     //now the actual shake can be detected
     override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            //TODO: STOP TIMER
             restartTimer()
             correctAnswers()
         }
@@ -144,7 +151,7 @@ extension EventViewController {
     @objc func startTimer(){
         print("Timer fired")
         countDown -= 1
-        timerLabel.text = "\(countDown)"
+        timerLabel.text = timeFormatter.string(from: countDown)
         if countDown == 0 {
             restartTimer()
             //ALERT, AND IN THAT ALERT IS WHERE WE CHECK THE ANSWERS AND LOAD THE NEXT ROUND
@@ -158,7 +165,7 @@ extension EventViewController {
         timer?.invalidate()
         timer = nil
         countDown = 6
-        timerLabel.text = "\(countDown)"
+        timerLabel.text = timeFormatter.string(from: countDown)
     }
     
     func timesUpAlert(){
@@ -166,6 +173,7 @@ extension EventViewController {
         let nextRoundAction = UIAlertAction(title: "Next Round", style: .default) { (_) in
             self.correctAnswers()
         }
+        
         let quitGame = UIAlertAction(title: "Quit", style: .destructive) { (_) in
             self.eventController.points = 0
             self.eventController.round = 0

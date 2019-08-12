@@ -9,12 +9,12 @@
 import Foundation
 
 class EventController {
-    var round = 6
+    var round = 0
     var points = 0
     var events: [Event] = []
     var removedEvents: [Event] = []
     var currentArray: [Event] = []
-    var timer: Timer?
+ 
     
     //init the array
     init(){
@@ -70,9 +70,20 @@ class EventController {
     }
     
     //If they get it right or wrong
-    //Move to next round
     //Add Points
-    //Restart timer
+    func addPoints(){
+        points += 1
+    }
+    
+    //Move to next round
+    func addRound(){
+        round += 1
+    }
+    
+    func clearCurrentArray(){
+        currentArray.removeAll()
+    }
+    
     
 
 }

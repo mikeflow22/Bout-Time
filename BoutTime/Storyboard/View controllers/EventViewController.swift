@@ -67,8 +67,18 @@ class EventViewController: UIViewController {
         } else {
             print("GAME OVER")
             //TODO: final mock up, make the screen go blue, button to play again //transition to a different viewController
+            performSegue(withIdentifier: "ToFinalScore", sender: nil)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToFinalScore" {
+            let destination = segue.destination as! FinalScoreViewController
+            destination.eventController = eventController
+        }
+    }
+    
+    
     
     @IBAction func upDownVoteButtonPresses(_ sender: UIButton) {
         if sender.tag == 1 || sender.tag == 2 {

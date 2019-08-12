@@ -207,6 +207,7 @@
                         <outlet property="secondLabel" destination="0zH-bs-jsA" id="9UO-Gt-key"/>
                         <outlet property="thirdLabel" destination="ons-3w-35Q" id="zFr-Nd-z31"/>
                         <outlet property="timerLabel" destination="y7N-EX-FQe" id="vvC-sl-pvH"/>
+                        <segue destination="yOe-LM-etw" kind="presentation" identifier="ToFinalScore" id="bHR-oF-hW5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

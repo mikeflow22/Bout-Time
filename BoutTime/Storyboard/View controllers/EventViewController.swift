@@ -15,7 +15,7 @@ class EventViewController: UIViewController {
     var bLabel = ""
     var labelArray: [UILabel] = []
     var timer: Timer?
-    var countDown: TimeInterval = 5
+    var countDown: TimeInterval = 35
     
     var timeFormatter: DateComponentsFormatter {
        let formatter = DateComponentsFormatter()
@@ -37,7 +37,7 @@ class EventViewController: UIViewController {
         labelArray += [ firstLabel, secondLabel, thirdLabel, fourthLabel ]
         timerLabel.text = timeFormatter.string(from: countDown)
         nextRoundProperties.isHidden = true
-        loadLabels()
+//        loadLabels()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,7 +54,6 @@ class EventViewController: UIViewController {
     
     @IBAction func nextRoundButton(_ sender: UIButton) {
         nextRoundProperties.isHidden = true
-//        loadViewDidLoad()
         loadLabels()
     }
     
@@ -193,7 +192,7 @@ extension EventViewController {
     func restartTimer(){
         timer?.invalidate()
         timer = nil
-        countDown = 5
+        countDown = 35
         timerLabel.text = timeFormatter.string(from: countDown)
     }
     

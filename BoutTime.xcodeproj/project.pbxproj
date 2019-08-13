@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B5F1ED1230341F300EB48A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B9A7D3722E5257E000298CE /* Assets.xcassets */; };
+		1B5F1ED32303423000EB48A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B9A7D3922E5257E000298CE /* LaunchScreen.storyboard */; };
 		1B9A7D3122E5257D000298CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9A7D3022E5257D000298CE /* AppDelegate.swift */; };
 		1B9A7D3322E5257D000298CE /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9A7D3222E5257D000298CE /* EventViewController.swift */; };
 		1B9A7D3622E5257D000298CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B9A7D3422E5257D000298CE /* Main.storyboard */; };
-		1B9A7D3822E5257E000298CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B9A7D3722E5257E000298CE /* Assets.xcassets */; };
-		1B9A7D3B22E5257E000298CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B9A7D3922E5257E000298CE /* LaunchScreen.storyboard */; };
 		1BC435032301CEFE00EE6358 /* FinalScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC435022301CEFE00EE6358 /* FinalScoreViewController.swift */; };
 		1BC8702722F8EF200080CDC4 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC8702622F8EF200080CDC4 /* Event.swift */; };
 		1BC8702D22F8F0BA0080CDC4 /* EventController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC8702C22F8F0BA0080CDC4 /* EventController.swift */; };
@@ -60,6 +60,7 @@
 		1B9A7D2F22E5257D000298CE /* BoutTime */ = {
 			isa = PBXGroup;
 			children = (
+				1B9A7D3722E5257E000298CE /* Assets.xcassets */,
 				1BC8702B22F8F0A80080CDC4 /* EventController */,
 				1BC8702522F8EF080080CDC4 /* Model */,
 				1BC8702A22F8F0870080CDC4 /* Storyboard */,
@@ -80,7 +81,6 @@
 			isa = PBXGroup;
 			children = (
 				1B9A7D3022E5257D000298CE /* AppDelegate.swift */,
-				1B9A7D3722E5257E000298CE /* Assets.xcassets */,
 				1B9A7D3922E5257E000298CE /* LaunchScreen.storyboard */,
 				1B9A7D3C22E5257E000298CE /* Info.plist */,
 			);
@@ -171,8 +171,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B9A7D3B22E5257E000298CE /* LaunchScreen.storyboard in Resources */,
-				1B9A7D3822E5257E000298CE /* Assets.xcassets in Resources */,
+				1B5F1ED32303423000EB48A6 /* LaunchScreen.storyboard in Resources */,
+				1B5F1ED1230341F300EB48A6 /* Assets.xcassets in Resources */,
 				1B9A7D3622E5257D000298CE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,7 +336,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4W7EQ4E4R;
+				IBSC_COMPILER_AUTO_ACTIVATE_CUSTOM_FONTS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/BoutTime/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -354,7 +356,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4W7EQ4E4R;
+				IBSC_COMPILER_AUTO_ACTIVATE_CUSTOM_FONTS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/BoutTime/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

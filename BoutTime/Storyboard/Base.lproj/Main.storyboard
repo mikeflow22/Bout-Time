@@ -179,6 +179,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RE3-Jz-VpP">
+                                <rect key="frame" x="86" y="515" width="149" height="33"/>
+                                <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Button" image="next_round_success"/>
+                                <connections>
+                                    <action selector="nextRoundButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Re4-Hp-FmV"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -187,11 +195,15 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ceP-Ve-mLm" secondAttribute="trailing" constant="16" id="7eA-y5-fnc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="mhV-vh-FzX" secondAttribute="trailing" constant="16" id="9Sb-Dc-sru"/>
                             <constraint firstItem="Tee-12-BYC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Akr-hB-RBC"/>
+                            <constraint firstAttribute="bottom" secondItem="RE3-Jz-VpP" secondAttribute="bottom" constant="20" symbolic="YES" id="HZZ-pW-LBl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="CNH-hb-INd" secondAttribute="trailing" constant="16" id="IP3-km-8G6"/>
                             <constraint firstItem="cDj-Oc-OBT" firstAttribute="top" secondItem="CNH-hb-INd" secondAttribute="bottom" constant="5" id="MHK-6h-vre"/>
                             <constraint firstItem="CNH-hb-INd" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="QZd-aD-si2"/>
+                            <constraint firstItem="RE3-Jz-VpP" firstAttribute="centerX" secondItem="y7N-EX-FQe" secondAttribute="centerX" id="RB8-sB-Zmh"/>
+                            <constraint firstItem="RE3-Jz-VpP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="86" id="Rqp-XF-bhL"/>
                             <constraint firstItem="mhV-vh-FzX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="V9a-Co-c6q"/>
                             <constraint firstItem="ceP-Ve-mLm" firstAttribute="top" secondItem="mhV-vh-FzX" secondAttribute="bottom" constant="5" id="Zjr-5E-J42"/>
+                            <constraint firstItem="RE3-Jz-VpP" firstAttribute="top" secondItem="ceP-Ve-mLm" secondAttribute="bottom" id="aV8-5Y-LLm"/>
                             <constraint firstItem="cDj-Oc-OBT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="dUB-Xf-20N"/>
                             <constraint firstItem="y7N-EX-FQe" firstAttribute="top" secondItem="ceP-Ve-mLm" secondAttribute="bottom" constant="1" id="h4q-rY-abB"/>
                             <constraint firstItem="Tee-12-BYC" firstAttribute="top" secondItem="y7N-EX-FQe" secondAttribute="bottom" constant="1" id="pv1-qA-f8V"/>
@@ -204,6 +216,7 @@
                     <connections>
                         <outlet property="firstLabel" destination="GYY-j0-6Lu" id="vmD-Iz-rjI"/>
                         <outlet property="fourthLabel" destination="Ieg-kt-9x4" id="YaB-ZB-aDz"/>
+                        <outlet property="nextRoundProperties" destination="RE3-Jz-VpP" id="6kw-OH-tPg"/>
                         <outlet property="secondLabel" destination="0zH-bs-jsA" id="9UO-Gt-key"/>
                         <outlet property="thirdLabel" destination="ons-3w-35Q" id="zFr-Nd-z31"/>
                         <outlet property="timerLabel" destination="y7N-EX-FQe" id="vvC-sl-pvH"/>
@@ -268,6 +281,7 @@
     </scenes>
     <resources>
         <image name="down_full" width="158" height="457"/>
+        <image name="next_round_success" width="558" height="142"/>
         <image name="up_full" width="158" height="457"/>
     </resources>
 </document>

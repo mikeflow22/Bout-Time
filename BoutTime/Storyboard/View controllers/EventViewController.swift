@@ -15,7 +15,7 @@ class EventViewController: UIViewController {
     var bLabel = ""
     var labelArray: [UILabel] = []
     var timer: Timer?
-    var countDown: TimeInterval = 6
+    var countDown: TimeInterval = 35
     
     var timeFormatter: DateComponentsFormatter {
        let formatter = DateComponentsFormatter()
@@ -30,18 +30,31 @@ class EventViewController: UIViewController {
     @IBOutlet weak var thirdLabel: UILabel!
     @IBOutlet weak var fourthLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var nextRoundProperties: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        loadViewDidLoad()
+    }
+    
+    func loadViewDidLoad(){
         labelArray += [ firstLabel, secondLabel, thirdLabel, fourthLabel ]
-        loadLabels()
         timerLabel.text = timeFormatter.string(from: countDown)
+        nextRoundProperties.isHidden = true
+        loadLabels()
     }
     
     //Shake Gesture
     //We need to make the view Controller respond to touch events.
     override func becomeFirstResponder() -> Bool {
         return true
+    }
+    @IBAction func nextRoundButton(_ sender: UIButton) {
+        //
+        loadLabels()
+        
+        //is hidden = true
+        nextRoundProperties.isHidden = true
     }
     
     //now the actual shake can be detected
@@ -53,7 +66,7 @@ class EventViewController: UIViewController {
     }
     
     func loadLabels(){
-        if eventController.round < 2 {
+        if eventController.round < 6 {
             //TODO: START TIMER
             createTimer()
             
@@ -126,6 +139,9 @@ class EventViewController: UIViewController {
         let answerArray = eventController.currentArray.sorted()
         let labelTextArray = labelArray.compactMap { $0.text }
         if labelTextArray == answerArray.map { $0.question } {
+            //show next round button
+            nextRoundProperties.isHidden = false
+            nextRoundProperties.setImage(UIImage(named: "next_round_success"), for: .normal)
             //add point
             eventController.addPoints()
             //add round
@@ -133,7 +149,7 @@ class EventViewController: UIViewController {
             //clearCurrentArray
             eventController.clearCurrentArray()
             
-            loadLabels()
+//            loadLabels()
             //clear out current array
             //load new questions for the next round
             print("I think it worked. ")
@@ -141,11 +157,14 @@ class EventViewController: UIViewController {
             print("firstArray array: \(answerArray)")
         } else {
             print("Error COMPARABLE DID NOT WORK")
+            //show next round button
+            nextRoundProperties.isHidden = false
+            nextRoundProperties.setImage(UIImage(named: "next_round_fail"), for: .normal)
             //add round
             eventController.addRound()
             //clearCurrentArray
             eventController.clearCurrentArray()
-            loadLabels()
+//            loadLabels()
         }
     }
 }
@@ -172,7 +191,7 @@ extension EventViewController {
     func restartTimer(){
         timer?.invalidate()
         timer = nil
-        countDown = 6
+        countDown = 35
         timerLabel.text = timeFormatter.string(from: countDown)
     }
     

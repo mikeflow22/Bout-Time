@@ -29,6 +29,7 @@ class FinalScoreViewController: UIViewController {
     }
     
     @IBAction func playAgainButtonPressed(_ sender: UIButton) {
+        print("play again button pressed.")
         navigationController?.popToRootViewController(animated: true)
     }
     
@@ -36,5 +37,6 @@ class FinalScoreViewController: UIViewController {
         guard let eventController = eventController, isViewLoaded else  { print("blah blah blah"); return }
         print("eventController is set")
         scoreLabel.text = "\(eventController.points)/6"
+        print("score: \(eventController.points)")
     }
 }

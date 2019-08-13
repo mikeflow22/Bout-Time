@@ -15,7 +15,7 @@ class EventViewController: UIViewController {
     var bLabel = ""
     var labelArray: [UILabel] = []
     var timer: Timer?
-    var countDown: TimeInterval = 35
+    var countDown: TimeInterval = 5
     
     var timeFormatter: DateComponentsFormatter {
        let formatter = DateComponentsFormatter()
@@ -34,19 +34,15 @@ class EventViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadViewDidLoad()
+        labelArray += [ firstLabel, secondLabel, thirdLabel, fourthLabel ]
+        timerLabel.text = timeFormatter.string(from: countDown)
+        nextRoundProperties.isHidden = true
+        loadLabels()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         restartTimer()
-        loadViewDidLoad()
-    }
-    
-    func loadViewDidLoad(){
-        labelArray += [ firstLabel, secondLabel, thirdLabel, fourthLabel ]
-        timerLabel.text = timeFormatter.string(from: countDown)
-        nextRoundProperties.isHidden = true
         loadLabels()
     }
     
@@ -57,8 +53,9 @@ class EventViewController: UIViewController {
     }
     
     @IBAction func nextRoundButton(_ sender: UIButton) {
-        loadLabels()
         nextRoundProperties.isHidden = true
+//        loadViewDidLoad()
+        loadLabels()
     }
     
     //now the actual shake can be detected
@@ -152,6 +149,7 @@ class EventViewController: UIViewController {
             eventController.addRound()
             //clearCurrentArray
             eventController.clearCurrentArray()
+           
             
             //clear out current array
             //load new questions for the next round
@@ -195,7 +193,7 @@ extension EventViewController {
     func restartTimer(){
         timer?.invalidate()
         timer = nil
-        countDown = 35
+        countDown = 5
         timerLabel.text = timeFormatter.string(from: countDown)
     }
     

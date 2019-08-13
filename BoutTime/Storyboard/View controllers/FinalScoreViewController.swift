@@ -33,6 +33,7 @@ class FinalScoreViewController: UIViewController {
         guard let eventController = eventController else { return }
         eventController.round = 0
         eventController.points = 0
+        eventController.events = eventController.removedEvents
         self.dismiss(animated: true, completion: nil)
     }
     

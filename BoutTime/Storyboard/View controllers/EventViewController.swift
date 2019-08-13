@@ -37,6 +37,12 @@ class EventViewController: UIViewController {
         loadViewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        restartTimer()
+        loadViewDidLoad()
+    }
+    
     func loadViewDidLoad(){
         labelArray += [ firstLabel, secondLabel, thirdLabel, fourthLabel ]
         timerLabel.text = timeFormatter.string(from: countDown)
@@ -49,11 +55,9 @@ class EventViewController: UIViewController {
     override func becomeFirstResponder() -> Bool {
         return true
     }
+    
     @IBAction func nextRoundButton(_ sender: UIButton) {
-        //
         loadLabels()
-        
-        //is hidden = true
         nextRoundProperties.isHidden = true
     }
     
@@ -80,6 +84,7 @@ class EventViewController: UIViewController {
         } else {
             print("GAME OVER")
             //TODO: final mock up, make the screen go blue, button to play again //transition to a different viewController
+            restartTimer()
             performSegue(withIdentifier: "ToFinalScore", sender: nil)
         }
     }
@@ -148,7 +153,6 @@ class EventViewController: UIViewController {
             //clearCurrentArray
             eventController.clearCurrentArray()
             
-//            loadLabels()
             //clear out current array
             //load new questions for the next round
             print("I think it worked. ")
@@ -165,7 +169,6 @@ class EventViewController: UIViewController {
             eventController.addRound()
             //clearCurrentArray
             eventController.clearCurrentArray()
-//            loadLabels()
         }
     }
 }
@@ -199,7 +202,8 @@ extension EventViewController {
     func timesUpAlert(){
        let alert = UIAlertController(title: "Time is up!", message: "You let the time run out.", preferredStyle: .alert)
         let nextRoundAction = UIAlertAction(title: "Next Round", style: .default) { (_) in
-            self.correctAnswers()
+           self.eventController.round += 1
+            self.loadLabels()
         }
         
         let quitGame = UIAlertAction(title: "Quit", style: .destructive) { (_) in

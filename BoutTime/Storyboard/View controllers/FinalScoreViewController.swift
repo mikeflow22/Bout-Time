@@ -30,7 +30,10 @@ class FinalScoreViewController: UIViewController {
     
     @IBAction func playAgainButtonPressed(_ sender: UIButton) {
         print("play again button pressed.")
-        navigationController?.popToRootViewController(animated: true)
+        guard let eventController = eventController else { return }
+        eventController.round = 0
+        eventController.points = 0
+        self.dismiss(animated: true, completion: nil)
     }
     
     func updateViews(){

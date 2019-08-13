@@ -93,17 +93,14 @@ class EventViewController: UIViewController {
     
     @IBAction func upDownVoteButtonPresses(_ sender: UIButton) {
         if sender.tag == 1 || sender.tag == 2 {
-            view.backgroundColor = .blue
             changeFirstAndSecondLabels()
         }
         
         if sender.tag == 3 || sender.tag == 4 {
-            view.backgroundColor = .red
             changeSecondAndThridLabels()
         }
         
         if sender.tag == 5 || sender.tag == 6 {
-            view.backgroundColor = .orange
             changeThirdAndFourthLabels()
         }
     }
@@ -141,6 +138,8 @@ class EventViewController: UIViewController {
         if labelTextArray == answerArray.map { $0.question } {
             //show next round button
             nextRoundProperties.isHidden = false
+            nextRoundProperties.layer.cornerRadius = 12
+            nextRoundProperties.clipsToBounds = true
             nextRoundProperties.setImage(UIImage(named: "next_round_success"), for: .normal)
             //add point
             eventController.addPoints()
@@ -159,6 +158,8 @@ class EventViewController: UIViewController {
             print("Error COMPARABLE DID NOT WORK")
             //show next round button
             nextRoundProperties.isHidden = false
+            nextRoundProperties.layer.cornerRadius = 12
+            nextRoundProperties.clipsToBounds = true
             nextRoundProperties.setImage(UIImage(named: "next_round_fail"), for: .normal)
             //add round
             eventController.addRound()

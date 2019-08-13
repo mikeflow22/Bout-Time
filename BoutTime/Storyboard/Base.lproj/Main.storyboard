@@ -67,7 +67,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="P8c-Pf-Dot"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="up_full"/>
+                                                <state key="normal" title="Button" image="up_half"/>
                                                 <connections>
                                                     <action selector="upDownVoteButtonPresses:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tc1-a3-Iqe"/>
                                                 </connections>
@@ -77,7 +77,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="lM7-aI-WeY"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="down_full"/>
+                                                <state key="normal" title="Button" image="down_half"/>
                                                 <connections>
                                                     <action selector="upDownVoteButtonPresses:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yLs-Ia-run"/>
                                                 </connections>
@@ -107,7 +107,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="Oxj-5Y-wc9"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="up_full"/>
+                                                <state key="normal" title="Button" image="up_half"/>
                                                 <connections>
                                                     <action selector="upDownVoteButtonPresses:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yI4-My-BrG"/>
                                                 </connections>
@@ -117,7 +117,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="UJo-uV-beZ"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="down_full"/>
+                                                <state key="normal" title="Button" image="down_half"/>
                                                 <connections>
                                                     <action selector="upDownVoteButtonPresses:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aF1-sN-ASh"/>
                                                 </connections>
@@ -159,24 +159,24 @@
                                     <constraint firstAttribute="height" constant="120" id="pIu-4U-koD"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7N-EX-FQe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7N-EX-FQe">
                                 <rect key="frame" x="115" y="516" width="90" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="Xn3-Bk-vWo"/>
                                     <constraint firstAttribute="width" constant="90" id="grg-Qb-P8J"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake to Answer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tee-12-BYC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Shake to Answer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tee-12-BYC">
                                 <rect key="frame" x="96" y="542" width="128" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="OxA-tv-4be"/>
                                     <constraint firstAttribute="width" constant="128" id="yGF-wI-eSn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
+                                <color key="textColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RE3-Jz-VpP">
@@ -188,7 +188,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="CNH-hb-INd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="2h3-2D-eW5"/>
                             <constraint firstItem="mhV-vh-FzX" firstAttribute="top" secondItem="cDj-Oc-OBT" secondAttribute="bottom" constant="5" id="7It-JT-cRG"/>
@@ -235,24 +235,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Z7X-Vl-8Bq">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Z7X-Vl-8Bq">
                                 <rect key="frame" x="124.5" y="238.5" width="71" height="91"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wjB-YI-Vmy">
-                                        <rect key="frame" x="10" y="0.0" width="51.5" height="12"/>
+                                        <rect key="frame" x="10" y="0.0" width="51.5" height="25"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.35294117650000001" green="0.73333333329999995" blue="0.70980392160000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" text="4/6" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YVa-Zh-SOD">
-                                        <rect key="frame" x="13.5" y="20" width="44" height="33"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="13" y="33" width="45.5" height="25"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4k-Gc-ufr">
-                                        <rect key="frame" x="0.0" y="61" width="71" height="30"/>
-                                        <state key="normal" title="Play Again"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o4k-Gc-ufr">
+                                        <rect key="frame" x="0.0" y="66" width="71" height="25"/>
+                                        <state key="normal" image="play_again"/>
                                         <connections>
                                             <action selector="playAgainButtonPressed:" destination="yOe-LM-etw" eventType="touchUpInside" id="W0e-DO-tOp"/>
                                         </connections>
@@ -260,7 +260,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.20298887369999999" green="0.4656183639" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Z7X-Vl-8Bq" firstAttribute="leading" secondItem="zJe-Ki-NZD" secondAttribute="leading" constant="124.5" id="4db-88-bGD"/>
                             <constraint firstItem="Z7X-Vl-8Bq" firstAttribute="top" secondItem="zJe-Ki-NZD" secondAttribute="top" constant="218.5" id="NYT-BB-FLp"/>
@@ -281,7 +281,10 @@
     </scenes>
     <resources>
         <image name="down_full" width="158" height="457"/>
+        <image name="down_half" width="158" height="229"/>
         <image name="next_round_success" width="558" height="142"/>
+        <image name="play_again" width="450" height="142"/>
         <image name="up_full" width="158" height="457"/>
+        <image name="up_half" width="158" height="229"/>
     </resources>
 </document>

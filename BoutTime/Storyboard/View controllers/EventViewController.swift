@@ -37,7 +37,6 @@ class EventViewController: UIViewController {
         labelArray += [ firstLabel, secondLabel, thirdLabel, fourthLabel ]
         timerLabel.text = timeFormatter.string(from: countDown)
         nextRoundProperties.isHidden = true
-//        loadLabels()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -75,7 +74,7 @@ class EventViewController: UIViewController {
                 label.text = event.question
                 eventController.currentArray.append(event)
                 eventController.remove(event: event)
-                print("This is the event: \(event.question)")
+//                print("This is the event: \(event.question)")
             }
         } else {
             print("GAME OVER")
@@ -152,11 +151,11 @@ class EventViewController: UIViewController {
             
             //clear out current array
             //load new questions for the next round
-            print("I think it worked. ")
-            print("String array: \(labelTextArray)")
-            print("firstArray array: \(answerArray)")
+//            print("I think it worked. ")
+//            print("String array: \(labelTextArray)")
+//            print("firstArray array: \(answerArray)")
         } else {
-            print("Error COMPARABLE DID NOT WORK")
+//            print("Error COMPARABLE DID NOT WORK")
             //show next round button
             nextRoundProperties.isHidden = false
             nextRoundProperties.layer.cornerRadius = 12
@@ -177,7 +176,7 @@ extension EventViewController {
     }
     
     @objc func startTimer(){
-        print("Timer fired")
+//        print("Timer fired")
         countDown -= 1
         timerLabel.text = timeFormatter.string(from: countDown)
         if countDown == 0 {

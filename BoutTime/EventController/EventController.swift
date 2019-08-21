@@ -88,6 +88,9 @@ class EventController {
         currentArray.removeAll()
     }
     
-    
+    func checkAnswer(){
+        let answerArray = currentArray.sorted()
+        
+    }
 
 }

@@ -15,7 +15,7 @@ class EventViewController: UIViewController {
     var bLabel = ""
     var labelArray: [UILabel] = []
     var timer: Timer?
-    var countDown: TimeInterval = 35
+    var countDown: TimeInterval = 60
     
     var timeFormatter: DateComponentsFormatter {
        let formatter = DateComponentsFormatter()
@@ -92,64 +92,118 @@ class EventViewController: UIViewController {
     }
     
     @IBAction func upDownVoteButtonPresses(_ sender: UIButton) {
-        if sender.tag == 1 || sender.tag == 2 {
-            changeFirstAndSecondLabels()
-        }
         
-        if sender.tag == 3 || sender.tag == 4 {
-            changeSecondAndThridLabels()
+        switch sender.tag {
+        case 2,4,6:
+            moveEventUp(labelTag: sender.tag)
+        case 1,3,5:
+            moveEventDown(labelTag: sender.tag)
+        default:
+            break
         }
-        
-        if sender.tag == 5 || sender.tag == 6 {
-            changeThirdAndFourthLabels()
-        }
-    }
-    
-    func changeFirstAndSecondLabels(){
-        //change this condition to check the year
-        bLabel = firstLabel.text!
-        aLabel = secondLabel.text!
-        firstLabel.text = aLabel
-        secondLabel.text = bLabel
-        
-    }
-    
-    func changeSecondAndThridLabels(){
-        //change this condition to check the year
-        bLabel = secondLabel.text!
-        aLabel = thirdLabel.text!
-        secondLabel.text = aLabel
-        thirdLabel.text = bLabel
+//        moveEventUp(labelTag: sender.tag)
+//        if sender.tag == 1 || sender.tag == 2 {
+//            changeFirstAndSecondLabels()
+//        }
+//
+//        if sender.tag == 3 || sender.tag == 4 {
+//            changeSecondAndThridLabels()
+//        }
+//
+//        if sender.tag == 5 || sender.tag == 6 {
+//            changeThirdAndFourthLabels()
+//        }
         
     }
     
-    func changeThirdAndFourthLabels(){
-        //change this condition to check the year
-        bLabel = thirdLabel.text!
-        aLabel = fourthLabel.text!
-        thirdLabel.text = aLabel
-        fourthLabel.text = bLabel
+    func moveEventUp(labelTag: Int){
+        if labelTag == 2  || labelTag == 1 {
+            //put second label into firstLabel
+            bLabel = firstLabel.text!
+            aLabel = secondLabel.text!
+            firstLabel.text = aLabel
+            secondLabel.text = bLabel
+        }
         
+        if labelTag == 4 || labelTag == 3 {
+            //put third label into secondLabel
+            bLabel = secondLabel.text!
+            aLabel = thirdLabel.text!
+            secondLabel.text = aLabel
+            thirdLabel.text = bLabel
+        }
+        
+        if labelTag == 6 || labelTag == 5{
+            //put fourt label into thridLabel
+            bLabel = thirdLabel.text!
+            aLabel = fourthLabel.text!
+            thirdLabel.text = aLabel
+            fourthLabel.text = bLabel
+        }
     }
+    
+    func moveEventDown(labelTag: Int){
+        if  labelTag == 1 {
+            //put second label into firstLabel
+            aLabel = firstLabel.text!
+            bLabel = secondLabel.text!
+            firstLabel.text = bLabel
+            secondLabel.text = aLabel
+        }
+        
+        if labelTag == 3 {
+            //put third label into secondLabel
+            aLabel = secondLabel.text!
+            bLabel = thirdLabel.text!
+            secondLabel.text = bLabel
+            thirdLabel.text = aLabel
+        }
+        
+        if labelTag == 5 {
+            //put fourt label into thridLabel
+            aLabel = thirdLabel.text!
+            bLabel = fourthLabel.text!
+            thirdLabel.text = bLabel
+            fourthLabel.text = aLabel
+        }
+    }
+//
+//    func changeFirstAndSecondLabels(){
+////        //change this condition to check the year
+////        bLabel = firstLabel.text!
+////        aLabel = secondLabel.text!
+////        firstLabel.text = aLabel
+////        secondLabel.text = bLabel
+//
+//    }
+//
+//    func changeSecondAndThridLabels(){
+//        //change this condition to check the year
+////        bLabel = secondLabel.text!
+////        aLabel = thirdLabel.text!
+////        secondLabel.text = aLabel
+////        thirdLabel.text = bLabel
+//
+//    }
+//
+//    func changeThirdAndFourthLabels(){
+//        //change this condition to check the year
+////        bLabel = thirdLabel.text!
+////        aLabel = fourthLabel.text!
+////        thirdLabel.text = aLabel
+////        fourthLabel.text = bLabel
+//
+//    }
     
     func correctAnswers(){
         let answerArray = eventController.currentArray.sorted()
         let labelTextArray = labelArray.compactMap { $0.text }
         if labelTextArray == answerArray.map { $0.question } {
             //show next round button
-            nextRoundProperties.isHidden = false
-            nextRoundProperties.layer.cornerRadius = 12
-            nextRoundProperties.clipsToBounds = true
-            nextRoundProperties.setImage(UIImage(named: "next_round_success"), for: .normal)
+            nextRound()
             //add point
             eventController.addPoints()
-            //add round
-            eventController.addRound()
-            //clearCurrentArray
-            eventController.clearCurrentArray()
-           
-            
-            //clear out current array
+            nextRoundProperties.setImage(UIImage(named: "next_round_success"), for: .normal)
             //load new questions for the next round
 //            print("I think it worked. ")
 //            print("String array: \(labelTextArray)")
@@ -157,15 +211,19 @@ class EventViewController: UIViewController {
         } else {
 //            print("Error COMPARABLE DID NOT WORK")
             //show next round button
-            nextRoundProperties.isHidden = false
-            nextRoundProperties.layer.cornerRadius = 12
-            nextRoundProperties.clipsToBounds = true
+            nextRound()
             nextRoundProperties.setImage(UIImage(named: "next_round_fail"), for: .normal)
-            //add round
-            eventController.addRound()
-            //clearCurrentArray
-            eventController.clearCurrentArray()
         }
+    }
+    func nextRound(){
+        //show next round button
+        nextRoundProperties.isHidden = false
+        nextRoundProperties.layer.cornerRadius = 12
+        nextRoundProperties.clipsToBounds = true
+        //add round
+        eventController.addRound()
+        //clearCurrentArray
+        eventController.clearCurrentArray()
     }
 }
 
@@ -191,7 +249,7 @@ extension EventViewController {
     func restartTimer(){
         timer?.invalidate()
         timer = nil
-        countDown = 35
+        countDown = 60
         timerLabel.text = timeFormatter.string(from: countDown)
     }
     

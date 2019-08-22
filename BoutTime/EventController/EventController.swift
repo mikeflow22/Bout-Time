@@ -14,6 +14,7 @@ class EventController {
     var events: [Event] = []
     var removedEvents: [Event] = []
     var currentArray: [Event] = []
+    var labelStringArray: [String] = []
  
     
     //init the array
@@ -88,9 +89,22 @@ class EventController {
         currentArray.removeAll()
     }
     
-    func checkAnswer(){
+    func checkAnswer() -> Bool {
+        //order the answer array
         let answerArray = currentArray.sorted()
-        
+       //get the questions from the ordered answer array
+        let sortedAnswerArray = answerArray.map { $0.question }
+        //compare the strings in the labelTextArray to the newly sortedAnswerArray
+        if labelStringArray == sortedAnswerArray {
+            addPoints()
+            addRound()
+            clearCurrentArray()
+            return true
+        } else {
+            addRound()
+            clearCurrentArray()
+            return false
+        }
     }
 
 }

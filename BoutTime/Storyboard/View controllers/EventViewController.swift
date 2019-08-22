@@ -94,13 +94,23 @@ class EventViewController: UIViewController {
     @IBAction func upDownVoteButtonPresses(_ sender: UIButton) {
         
         switch sender.tag {
-        case 2,4,6:
+        case 2,4:
             moveEventUp(labelTag: sender.tag)
-        case 1,3,5:
+            sender.setImage(UIImage(named: "up_half_selected"), for: .normal)
+        case 6:
+            moveEventUp(labelTag: sender.tag)
+            sender.setImage(UIImage(named: "up_full_selected"), for: .normal)
+
+        case 3,5:
             moveEventDown(labelTag: sender.tag)
+            sender.setImage(UIImage(named: "down_half_selected"), for: .normal)
+        case 1:
+            moveEventDown(labelTag: sender.tag)
+            sender.setImage(UIImage(named: "down_full_selected"), for: .normal)
         default:
             break
         }
+        
 //        moveEventUp(labelTag: sender.tag)
 //        if sender.tag == 1 || sender.tag == 2 {
 //            changeFirstAndSecondLabels()
@@ -113,6 +123,10 @@ class EventViewController: UIViewController {
 //        if sender.tag == 5 || sender.tag == 6 {
 //            changeThirdAndFourthLabels()
 //        }
+        
+    }
+    
+    func changeButtonsBack(){
         
     }
     
@@ -196,34 +210,51 @@ class EventViewController: UIViewController {
 //    }
     
     func correctAnswers(){
-        let answerArray = eventController.currentArray.sorted()
         let labelTextArray = labelArray.compactMap { $0.text }
-        if labelTextArray == answerArray.map { $0.question } {
-            //show next round button
+        eventController.labelStringArray = labelTextArray
+        
+        //compare arrays
+        if eventController.checkAnswer() {
             nextRound()
-            //add point
-            eventController.addPoints()
             nextRoundProperties.setImage(UIImage(named: "next_round_success"), for: .normal)
-            //load new questions for the next round
-//            print("I think it worked. ")
-//            print("String array: \(labelTextArray)")
-//            print("firstArray array: \(answerArray)")
+            
         } else {
-//            print("Error COMPARABLE DID NOT WORK")
-            //show next round button
             nextRound()
             nextRoundProperties.setImage(UIImage(named: "next_round_fail"), for: .normal)
         }
+        
+        
+//        let answerArray = eventController.currentArray.sorted()
+//        let labelTextArray = labelArray.compactMap { $0.text }
+//        eventController.labelStringArray = labelTextArray
+//
+//        if labelTextArray == answerArray.map { $0.question } {
+//            //show next round button
+//            nextRound()
+////            //add point
+////            eventController.addPoints()
+//            nextRoundProperties.setImage(UIImage(named: "next_round_success"), for: .normal)
+//            //load new questions for the next round
+////            print("I think it worked. ")
+////            print("String array: \(labelTextArray)")
+////            print("firstArray array: \(answerArray)")
+//        } else {
+////            print("Error COMPARABLE DID NOT WORK")
+//            //show next round button
+//            nextRound()
+//            nextRoundProperties.setImage(UIImage(named: "next_round_fail"), for: .normal)
+//        }
     }
+    
     func nextRound(){
         //show next round button
         nextRoundProperties.isHidden = false
         nextRoundProperties.layer.cornerRadius = 12
         nextRoundProperties.clipsToBounds = true
-        //add round
-        eventController.addRound()
-        //clearCurrentArray
-        eventController.clearCurrentArray()
+//        //add round
+//        eventController.addRound()
+//        //clearCurrentArray
+//        eventController.clearCurrentArray()
     }
 }
 

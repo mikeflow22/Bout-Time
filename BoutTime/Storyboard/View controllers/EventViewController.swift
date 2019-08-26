@@ -32,6 +32,13 @@ class EventViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var nextRoundProperties: UIButton!
     
+    @IBOutlet weak var fullDownButtonProperties: UIButton!
+    @IBOutlet weak var halfUpPropertie2: UIButton!
+    @IBOutlet weak var halfDownProperty3: UIButton!
+    @IBOutlet weak var halfUpProperty4: UIButton!
+    @IBOutlet weak var halfDownproperty5: UIButton!
+    @IBOutlet weak var fullUpProperty6: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         labelArray += [ firstLabel, secondLabel, thirdLabel, fourthLabel ]
@@ -54,6 +61,7 @@ class EventViewController: UIViewController {
     @IBAction func nextRoundButton(_ sender: UIButton) {
         nextRoundProperties.isHidden = true
         loadLabels()
+        loadButtonImage()
     }
     
     //now the actual shake can be detected
@@ -76,6 +84,7 @@ class EventViewController: UIViewController {
                 eventController.remove(event: event)
 //                print("This is the event: \(event.question)")
             }
+            loadButtonImage()
         } else {
             print("GAME OVER")
             //TODO: final mock up, make the screen go blue, button to play again //transition to a different viewController
@@ -92,7 +101,6 @@ class EventViewController: UIViewController {
     }
     
     @IBAction func upDownVoteButtonPresses(_ sender: UIButton) {
-        
         switch sender.tag {
         case 2,4:
             moveEventUp(labelTag: sender.tag)
@@ -110,23 +118,19 @@ class EventViewController: UIViewController {
         default:
             break
         }
-        
-//        moveEventUp(labelTag: sender.tag)
-//        if sender.tag == 1 || sender.tag == 2 {
-//            changeFirstAndSecondLabels()
-//        }
-//
-//        if sender.tag == 3 || sender.tag == 4 {
-//            changeSecondAndThridLabels()
-//        }
-//
-//        if sender.tag == 5 || sender.tag == 6 {
-//            changeThirdAndFourthLabels()
-//        }
-        
     }
     
-    func changeButtonsBack(){
+    func loadButtonImage(){
+       //using tags does not work.
+        //change up buttons back
+        fullUpProperty6.setImage(UIImage(named: "up_full"), for: .normal)
+        halfUpPropertie2.setImage(UIImage(named: "up_half"), for: .normal)
+        halfUpProperty4.setImage(UIImage(named: "up_half"), for: .normal)
+        
+        //change down buttons back
+        fullDownButtonProperties.setImage(UIImage(named: "down_full"), for: .normal)
+        halfDownProperty3.setImage(UIImage(named: "down_half"), for: .normal)
+        halfDownproperty5.setImage(UIImage(named: "down_half"), for: .normal)
         
     }
     

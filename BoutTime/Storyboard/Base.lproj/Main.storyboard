@@ -216,6 +216,12 @@
                     <connections>
                         <outlet property="firstLabel" destination="GYY-j0-6Lu" id="vmD-Iz-rjI"/>
                         <outlet property="fourthLabel" destination="Ieg-kt-9x4" id="YaB-ZB-aDz"/>
+                        <outlet property="fullDownButtonProperties" destination="UiA-5Y-Dxw" id="6J1-r6-wJA"/>
+                        <outlet property="fullUpProperty6" destination="rn4-H5-c3u" id="gHq-ZZ-R7j"/>
+                        <outlet property="halfDownProperty3" destination="wQ9-tc-7xb" id="SRy-q4-aDp"/>
+                        <outlet property="halfDownproperty5" destination="CkP-oz-4N5" id="FEu-kr-b6p"/>
+                        <outlet property="halfUpPropertie2" destination="oi1-jz-nMl" id="80j-8q-qJ3"/>
+                        <outlet property="halfUpProperty4" destination="bWg-kT-Xmg" id="elQ-x2-3Zm"/>
                         <outlet property="nextRoundProperties" destination="RE3-Jz-VpP" id="6kw-OH-tPg"/>
                         <outlet property="secondLabel" destination="0zH-bs-jsA" id="9UO-Gt-key"/>
                         <outlet property="thirdLabel" destination="ons-3w-35Q" id="zFr-Nd-z31"/>

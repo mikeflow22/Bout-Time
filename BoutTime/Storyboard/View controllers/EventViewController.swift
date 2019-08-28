@@ -108,7 +108,6 @@ class EventViewController: UIViewController {
         case 6:
             moveEventUp(labelTag: sender.tag)
             sender.setImage(UIImage(named: "up_full_selected"), for: .normal)
-
         case 3,5:
             moveEventDown(labelTag: sender.tag)
             sender.setImage(UIImage(named: "down_half_selected"), for: .normal)
